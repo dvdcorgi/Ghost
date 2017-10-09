@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using RedditSharp;
+using System.Threading.Tasks;
 
 namespace ServiceGhost
 {
@@ -22,6 +23,21 @@ namespace ServiceGhost
             var r = new Reddit();
             var x = r.GetPopularSubreddits(5);
             Console.WriteLine(x);
+        }
+
+        public int GetSync()
+        {
+            Random r = new Random();
+            var num = r.Next(1, 100);
+            return num;
+        }
+
+        public async Task<int> GetAsync()
+        {
+            await Task.Delay(0);
+            Random r = new Random();
+            var num = r.Next(1, 100);
+            return num;
         }
     }
 }

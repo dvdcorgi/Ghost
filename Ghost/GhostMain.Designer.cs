@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GhostMain));
             this.btnVerifyUser = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnDebug = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnDebug = new System.Windows.Forms.Button();
+            this.timerAsync = new System.Windows.Forms.Timer(this.components);
+            this.timerSync = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -92,6 +95,16 @@
             this.panelLeft.Size = new System.Drawing.Size(126, 461);
             this.panelLeft.TabIndex = 2;
             // 
+            // btnDebug
+            // 
+            this.btnDebug.Location = new System.Drawing.Point(19, 422);
+            this.btnDebug.Name = "btnDebug";
+            this.btnDebug.Size = new System.Drawing.Size(86, 23);
+            this.btnDebug.TabIndex = 3;
+            this.btnDebug.Text = "Debug";
+            this.btnDebug.UseVisualStyleBackColor = true;
+            this.btnDebug.Click += new System.EventHandler(this.btnDebug_ClickAsync);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -122,15 +135,15 @@
             this.tabPage2.Text = "Post";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnDebug
+            // timerAsync
             // 
-            this.btnDebug.Location = new System.Drawing.Point(19, 422);
-            this.btnDebug.Name = "btnDebug";
-            this.btnDebug.Size = new System.Drawing.Size(86, 23);
-            this.btnDebug.TabIndex = 3;
-            this.btnDebug.Text = "Debug";
-            this.btnDebug.UseVisualStyleBackColor = true;
-            this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
+            this.timerAsync.Interval = 10;
+            this.timerAsync.Tick += new System.EventHandler(this.timerAsync_Tick);
+            // 
+            // timerSync
+            // 
+            this.timerSync.Interval = 10;
+            this.timerSync.Tick += new System.EventHandler(this.timerSync_Tick);
             // 
             // GhostMain
             // 
@@ -163,6 +176,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnDebug;
+        private System.Windows.Forms.Timer timerAsync;
+        private System.Windows.Forms.Timer timerSync;
     }
 }
 

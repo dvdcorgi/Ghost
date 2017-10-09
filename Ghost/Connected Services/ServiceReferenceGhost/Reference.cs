@@ -26,6 +26,18 @@ namespace Ghost.ServiceReferenceGhost {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSub", ReplyAction="http://tempuri.org/IService/GetSubResponse")]
         System.Threading.Tasks.Task GetSubAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Get", ReplyAction="http://tempuri.org/IService/GetResponse")]
+        int Get();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Get", ReplyAction="http://tempuri.org/IService/GetResponse")]
+        System.Threading.Tasks.Task<int> GetAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSync", ReplyAction="http://tempuri.org/IService/GetSyncResponse")]
+        int GetSync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSync", ReplyAction="http://tempuri.org/IService/GetSyncResponse")]
+        System.Threading.Tasks.Task<int> GetSyncAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +81,22 @@ namespace Ghost.ServiceReferenceGhost {
         
         public System.Threading.Tasks.Task GetSubAsync() {
             return base.Channel.GetSubAsync();
+        }
+        
+        public int Get() {
+            return base.Channel.Get();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetAsync() {
+            return base.Channel.GetAsync();
+        }
+        
+        public int GetSync() {
+            return base.Channel.GetSync();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetSyncAsync() {
+            return base.Channel.GetSyncAsync();
         }
     }
 }

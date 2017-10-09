@@ -18,6 +18,18 @@
   <wsdl:message name="IService_GetSub_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSubResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get" />
+  </wsdl:message>
+  <wsdl:message name="IService_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSync_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSync" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSync_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSyncResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/LogIn" message="tns:IService_LogIn_InputMessage" />
@@ -26,6 +38,14 @@
     <wsdl:operation name="GetSub">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSub" message="tns:IService_GetSub_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSubResponse" message="tns:IService_GetSub_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Get" message="tns:IService_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetResponse" message="tns:IService_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSync">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSync" message="tns:IService_GetSync_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSyncResponse" message="tns:IService_GetSync_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -41,6 +61,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetSub">
       <soap:operation soapAction="http://tempuri.org/IService/GetSub" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://tempuri.org/IService/Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSync">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSync" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

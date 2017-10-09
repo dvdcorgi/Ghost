@@ -26,15 +26,35 @@ namespace Ghost
             txtPassword.Text = Settings.Default.pass;
         }
 
-        private void btnDebug_Click(object sender, EventArgs e)
+        private void btnDebug_ClickAsync(object sender, EventArgs e)
         {
-            ServiceClient s = new ServiceClient();
-            s.GetSub();
+            timerAsync.Start();
+            timerSync.Start();
+        }
+
+        private async Task doWork()
+        {
+            var r = new ClassReddit();
+            await r.ActReddit();
         }
 
         private void btnVerifyUser_Click(object sender, EventArgs e)
         {
+            var x = new ClassReddit();
+            x.GetSync();
+        }
 
+        private void timerAsync_Tick(object sender, EventArgs e)
+        {
+            ServiceClient c = new ServiceClient();
+            var x = c.GetAsync();
+            Console.WriteLine(x.Result);
+        }
+
+        private void timerSync_Tick(object sender, EventArgs e)
+        {
+            ServiceClient c = new ServiceClient();
+            Console.Write(c.GetSync());
         }
     }
 }

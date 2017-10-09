@@ -19,11 +19,49 @@ namespace Ghost
             //await subreddit.SubscribeAsync();
         }
 
-        public void GetSub()
+        public async Task ActionRedditAsync()
         {
-            var r = new Reddit();
-            var x = r.GetPopularSubreddits(5);
+            var reddit = new Reddit();
+            var subreddit = await reddit.GetSubredditAsync("/r/DotA2");
+
+            var x = subreddit.DisplayName;
             Console.WriteLine(x);
+            //var comments = subreddit.Comments.GetListingStream();
+
+            //await comments.Execute();
+            //foreach (var comment in subreddit.CommentStream)
+            //{
+            //    Console.WriteLine(DateTime.Now + "   New Comment posted to /r/example: " + comment.ShortLink);
+            //}
+        }
+
+        public async Task ActReddit()
+        {
+            Task<int> randNum = GetRandom();
+            int result = await randNum;
+            Console.WriteLine(result);
+        }
+
+        private async Task<int> GetRandom()
+        {
+            await Task.Delay(3000);
+            Random r = new Random();
+            return r.Next(1, 100);
+        }
+
+        public void GetSync()
+        {
+            Random r = new Random();
+            var num = r.Next(1, 100);
+            Console.WriteLine("Sync " + num);
+        }
+
+        public async Task GetAsync()
+        {
+            await Task.Delay(0);
+            Random r = new Random();
+            var num = r.Next(1, 100);
+            Console.WriteLine("Async " + num);
         }
     }
 }

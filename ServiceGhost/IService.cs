@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ServiceGhost
 {
@@ -18,6 +19,12 @@ namespace ServiceGhost
 
         [OperationContract]
         void GetSub();
+
+        [OperationContract]
+        Task<int> GetAsync();
+
+        [OperationContract]
+        int GetSync();
     }
 
 }
