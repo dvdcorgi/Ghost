@@ -46,24 +46,24 @@ namespace Ghost
             x.GetSync();
         }
 
-        private void timerAsync_Tick(object sender, EventArgs e)
+        private async void timerAsync_Tick(object sender, EventArgs e)
         {
             ServiceClient c = new ServiceClient();
             var x = c.GetAsync();
             Console.WriteLine(x.Result);
-            logItem();
+            await logItem();
         }
 
-        private void timerSync_Tick(object sender, EventArgs e)
+        private async void timerSync_TickAsync(object sender, EventArgs e)
         {
             ServiceClient c = new ServiceClient();
             Console.Write(c.GetSync());
-            logItem();
+            await logItem();
         }
 
-        private void btnLogClient_Click(object sender, EventArgs e)
+        private async void btnLogClient_ClickAsync(object sender, EventArgs e)
         {
-            logItem();
+            await logItem();
         }
 
         private async Task logItem()

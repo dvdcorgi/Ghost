@@ -158,7 +158,7 @@
             this.btnLogClient.TabIndex = 0;
             this.btnLogClient.Text = "Test Log";
             this.btnLogClient.UseVisualStyleBackColor = true;
-            this.btnLogClient.Click += new System.EventHandler(this.btnLogClient_Click);
+            this.btnLogClient.Click += new System.EventHandler(this.btnLogClient_ClickAsync);
             // 
             // timerAsync
             // 
@@ -168,7 +168,7 @@
             // timerSync
             // 
             this.timerSync.Interval = 1;
-            this.timerSync.Tick += new System.EventHandler(this.timerSync_Tick);
+            this.timerSync.Tick += new System.EventHandler(this.timerSync_TickAsync);
             // 
             // GhostMain
             // 
