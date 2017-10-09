@@ -39,11 +39,14 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnLogClient = new System.Windows.Forms.Button();
             this.timerAsync = new System.Windows.Forms.Timer(this.components);
             this.timerSync = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVerifyUser
@@ -109,6 +112,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(132, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -135,14 +139,35 @@
             this.tabPage2.Text = "Post";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnLogClient);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(432, 423);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Debugging";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnLogClient
+            // 
+            this.btnLogClient.Location = new System.Drawing.Point(178, 168);
+            this.btnLogClient.Name = "btnLogClient";
+            this.btnLogClient.Size = new System.Drawing.Size(75, 23);
+            this.btnLogClient.TabIndex = 0;
+            this.btnLogClient.Text = "Test Log";
+            this.btnLogClient.UseVisualStyleBackColor = true;
+            this.btnLogClient.Click += new System.EventHandler(this.btnLogClient_Click);
+            // 
             // timerAsync
             // 
-            this.timerAsync.Interval = 10;
+            this.timerAsync.Interval = 1;
             this.timerAsync.Tick += new System.EventHandler(this.timerAsync_Tick);
             // 
             // timerSync
             // 
-            this.timerSync.Interval = 10;
+            this.timerSync.Interval = 1;
             this.timerSync.Tick += new System.EventHandler(this.timerSync_Tick);
             // 
             // GhostMain
@@ -161,6 +186,7 @@
             this.groupBox1.PerformLayout();
             this.panelLeft.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -178,6 +204,8 @@
         private System.Windows.Forms.Button btnDebug;
         private System.Windows.Forms.Timer timerAsync;
         private System.Windows.Forms.Timer timerSync;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button btnLogClient;
     }
 }
 

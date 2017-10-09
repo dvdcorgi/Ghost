@@ -7,6 +7,8 @@ using System.ServiceModel.Web;
 using System.Text;
 using RedditSharp;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+using System.IO;
 
 namespace ServiceGhost
 {
