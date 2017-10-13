@@ -10,7 +10,7 @@ namespace ServiceGhost
         public void PushItem()
         {
             var item = "Push this item.";
-            Console.WriteLine();
+            Console.WriteLine(item);
         }
     }
 }
