@@ -12,7 +12,8 @@ namespace ServiceGhost
 
         public string GetName()
         {
-            return MyName + " " + MyAge;
+            var getPerson = MyName + " " + MyAge;
+            return getPerson;
         }
     }
 }
